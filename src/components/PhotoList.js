@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PhotoCard from "./PhotoCard.js";
 import axios from "axios";
+import { Container, Row } from "reactstrap";
 
 export default function PhotoList() {
     const [data, setData] = useState([]);
@@ -19,13 +20,17 @@ export default function PhotoList() {
 
   }, []);
 
-  return <div className="Photo">
-    <PhotoCard 
-        title={data.title}
-        explanation={data.explanation}
-        image={data.hdurl}
-        date={data.date}
-    />
+  return ( 
 
-  </div>
+    <Container>
+      <Row>  
+        <PhotoCard 
+          title={data.title}
+          explanation={data.explanation}
+          image={data.hdurl}
+          date={data.date}
+        />
+      </Row>
+    </Container>
+  )
 }
