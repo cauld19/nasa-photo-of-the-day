@@ -7,7 +7,6 @@ import moment from "moment";
 export default function PhotoList() {
     const [data, setData] = useState([]);
     const [date, setDate] = useState(moment().format('YYYY-MM-DD'))
-    const [count, setCount] = useState(1);
 
 
     function randomDate () {
@@ -20,9 +19,7 @@ export default function PhotoList() {
    
 
     function handleButtonReverse () {
-      setDate(moment().subtract(count, 'days').format('YYYY-MM-DD'));
-      setCount(count + 1);
-      console.log(count);
+      setDate(moment(date).subtract(1, 'days').format('YYYY-MM-DD'));
       console.log(date)
     }
 
